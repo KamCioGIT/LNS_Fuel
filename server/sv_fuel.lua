@@ -178,7 +178,7 @@ RegisterNetEvent('LNS_Fuel:pay', function(cost, currentFuel, nId, stationId, lit
         return
     end
 
-    if not isNearAnyPump(playerCoords, 15.0) then
+    if not isNearAnyPump(vehCoords, 20.0) then
         reportSecurityCheck(src, ("[Security Check] Player %s triggered LNS_Fuel:pay too far from any gas pump!"):format(src))
         return
     end
@@ -307,7 +307,7 @@ RegisterNetEvent('LNS_Fuel:fuelCan', function(ownsCan, cost, stationId)
 
     local playerPed = GetPlayerPed(src)
     local playerCoords = GetEntityCoords(playerPed)
-    if not isNearAnyPump(playerCoords, 15.0) then
+    if not isNearAnyPump(playerCoords, 20.0) then
         reportSecurityCheck(src, ("[Security Check] Player %s triggered LNS_Fuel:fuelCan too far from any gas pump!"):format(src))
         return
     end
